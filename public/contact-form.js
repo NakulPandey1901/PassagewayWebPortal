@@ -50,7 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (error) {
                 console.error('Submission error:', error);
-                formMessage.textContent = "Something went wrong. Please try again or email us directly.";
+                // DEBUG: Show actual error
+                alert(`Debug Error: ${error.message}`);
+                formMessage.textContent = `Error: ${error.message}. Please email info@pssgway.com`;
                 formMessage.style.color = 'red';
                 formMessage.style.display = 'block';
             } finally {

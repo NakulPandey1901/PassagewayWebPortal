@@ -367,6 +367,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             hideTyping();
             console.error('Email submission error:', error);
+            // DEBUG: Show actual error to user for debugging
+            alert(`Debug Error: ${error.message}`);
             botReply("I'm having trouble connecting to our server right now.\n\nPlease email us directly at **info@pssgway.com**.");
             flowState = 'done';
         }
