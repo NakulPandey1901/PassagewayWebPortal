@@ -313,33 +313,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Catch-all route to serve basic index.html for any unmatched routes
 app.get('*', (req, res) => {
-    const indexPath = path.join(__dirname, '../public/index.html');
-    res.sendFile(indexPath, (err) => {
-        if (err) {
-            console.error('DEBUG: Failed to send index.html', err);
-            // On failure, list the directory contents to the browser for debugging
-            const publicPath = path.join(__dirname, '../public');
-            let dirListing = 'Public directory not found or unreadable';
-
-            if (fs.existsSync(publicPath)) {
-                dirListing = fs.readdirSync(publicPath).join(', ');
-            } else {
-                // Try listing root
-                const rootPath = path.join(__dirname, '../');
-                if (fs.existsSync(rootPath)) {
-                    dirListing = `Public dir missing. Root contents: ${fs.readdirSync(rootPath).join(', ')}`;
-                }
-            }
-
-            res.status(404).send(`
-                <h1>404 - Not Found</h1>
-                <p>Failed to load: ${indexPath}</p>
-                <p>Error: ${err.message}</p>
-                <p>Current Directory (__dirname): ${__dirname}</p>
-                <p>Directory Listing (public): ${dirListing}</p>
-            `);
-        }
-    });
+    res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 app.listen(PORT, () => {

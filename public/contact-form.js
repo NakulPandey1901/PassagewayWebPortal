@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             data.timestamp = new Date().toLocaleString();
 
             try {
-                // Send to Backend (Google Sheets + Email)
-                const response = await fetch('http://localhost:5001/api/contact', {
+                // Send to Backend (Google Sheets + Email) - Relative Path
+                const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
