@@ -209,11 +209,17 @@ app.post('/api/chat', async (req, res) => {
             `
         };
 
-        const emailPromise = transporter.sendMail(mailOptions);
+        // Fire-and-Forget Email (Don't wait for it)
+        transporter.sendMail(mailOptions).then(info => {
+            console.log('Background Email Sent:', info.response);
+        }).catch(err => {
+            console.error('Background Email Failed:', err);
+        });
 
-        await Promise.all([sheetPromise, emailPromise]);
+        // Only wait for Sheets (Critical Data)
+        await sheetPromise;
 
-        res.json({ success: true, message: 'Chat data saved and email sent' });
+        res.json({ success: true, message: 'Chat data saved' });
     } catch (error) {
         console.error('Error saving chat data (FULL):', JSON.stringify(error, Object.getOwnPropertyNames(error)));
         require('fs').appendFileSync('error.log', `[${new Date().toISOString()}] Chat Error: ${error.stack || error}\n`);
@@ -308,12 +314,19 @@ app.post('/api/contact', async (req, res) => {
             `
         };
 
-        const emailPromise = transporter.sendMail(mailOptions);
+        // Fire-and-Forget Email (Don't wait for it)
+        transporter.sendMail(mailOptions).then(info => {
+            console.log('Background Email Sent:', info.response);
+            require('fs').appendFileSync('server.log', `[${new Date().toISOString()}] Success: Email sent\n`);
+        }).catch(err => {
+            console.error('Background Email Failed:', err);
+            require('fs').appendFileSync('server.log', `[${new Date().toISOString()}] Email Error: ${err}\n`);
+        });
 
-        await Promise.all([sheetPromise, emailPromise]);
+        // Only wait for Sheets (Critical Data)
+        await sheetPromise;
 
-        require('fs').appendFileSync('server.log', `[${new Date().toISOString()}] Success: Email sent to ${process.env.EMAIL_TO} for ${name}\n`);
-        res.json({ success: true, message: 'Contact data saved and email sent' });
+        res.json({ success: true, message: 'Contact data saved' });
     } catch (error) {
         console.error('Error handling contact data:', error);
         require('fs').appendFileSync('server.log', `[${new Date().toISOString()}] Contact Error: ${error.stack || error}\n`);
