@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passageway | AI & Machine Learning Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Passageway" class="logo-image">
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="values.html">Values</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li class="mobile-cta"><a href="contact.html" class="cta-button">Get Started</a></li>
+            </ul>
+            <a href="contact.html" class="cta-button desktop-cta">Get Started</a>
+        </div>
+    </nav>
+
+    <section class="hero fade-in">
+        <!-- <div class="hero-tag">EST. long ve</div> -->
+        <h1>Uncovering the <span class="highlight">hidden gems</span> in your data</h1>
+        <p class="hero-description">
+            We transform complex data challenges into competitive advantages through cutting-edge AI and machine
+            learning solutions.
+        </p>
+        <div class="hero-cta-group">
+            <a href="services.html" class="btn-primary">Explore Our Work</a>
+        </div>
+    </section>
+
+    <!-- Brief Introduction / Philosophy Section -->
+    <section class="services-section fade-in">
+        <div class="intro-container">
+            <h2 class="intro-title">The Art of Intelligence</h2>
+            <p class="intro-text">
+                Like a craftsman refining raw materials into a masterpiece, we meticulously shape raw data into
+                actionable intelligence. Our approach blends technical precision with strategic vision.
+            </p>
+
+            <div class="diagram-container">
+                <img src="assets/sketch.svg" alt="AI Core Workflow Sketch" class="diagram-image">
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="counter stat-number" data-target="2.5">0</span><span class="stat-number">B+</span>
+                    <p class="stat-label">Daily AI Predictions</p>
+                </div>
+                <div class="stat-item">
+                    <span class="counter stat-number" data-target="98">0</span><span class="stat-number">%</span>
+                    <p class="stat-label">Model Accuracy Rate</p>
+                </div>
+                <div class="stat-item">
+                    <span class="counter stat-number" data-target="12">0</span><span class="stat-number">x</span>
+                    <p class="stat-label">Faster Decision Making</p>
+                </div>
+                <div class="stat-item">
+                    <span class="counter stat-number" data-target="40">0</span><span class="stat-number">%</span>
+                    <p class="stat-label">Reduction in OpEx</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/logo.svg" alt="Passageway" class="logo-image" style="height: 50px;">
+                    </a>
+                    <p class="footer-desc">Your partner for innovation and growth in the age of artificial intelligence.
+                        We specialize in transforming complex data challenges into competitive advantages.</p>
+                    <div class="contact-info">
+                        <p>✉ info@pssgway.com</p>
+                        <p>📞 +91-7742543582</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>SERVICES</h4>
+                    <a href="services.html">Machine Learning</a>
+                    <a href="services.html">Multi-Agent AI</a>
+                    <a href="services.html">Data Engineering</a>
+                    <a href="services.html">Business Intelligence</a>
+                    <a href="services.html">Enterprise Apps</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>INDUSTRIES</h4>
+                    <a href="solutions.html">Food Technology</a>
+                    <a href="solutions.html">Sports & Entertainment</a>
+                    <a href="solutions.html">Energy & IoT</a>
+                    <a href="solutions.html">Manufacturing</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>COMPANY</h4>
+                    <a href="values.html">About Us</a>
+                    <a href="values.html">Our Values</a>
+                    <a href="partners.html">Partners</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                © 2025 Passageway Tech Private Limited. All rights reserved. <br>
+                Building the future of AI-powered business solutions
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <!-- Chat Widget -->
+    <div id="chat-button" title="Chat with Passageway AI">
+        <span class="chat-badge">1</span>
+        <img src="assets/ai-logo.svg" alt="Passageway AI" style="width: 32px; height: 32px;">
+    </div>
+
+    <div id="chat-window">
+        <div class="chat-header">
+            <h3>Passageway AI</h3>
+            <button id="chat-close" aria-label="Close chat">×</button>
+        </div>
+        <div id="chat-messages"></div>
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Type your message..." />
+            <button id="chat-send">Send</button>
+        </div>
+    </div>
+
+    <script src="utils/script.js"></script>
+
+    <script src="utils/counter.js"></script>
+    <script src="utils/chat.js"></script>
+
+</body>
+
+</html>

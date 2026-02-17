@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions | Passageway</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600&family=Instrument+Serif:ital@0;1&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Passageway" class="logo-image">
+            </a>
+            <button class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="solutions.html" class="active">Solutions</a></li>
+                <li><a href="values.html">Values</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li class="mobile-cta"><a href="contact.html" class="cta-button">Get Started</a></li>
+            </ul>
+            <a href="contact.html" class="cta-button desktop-cta">Get Started</a>
+        </div>
+    </nav>
+
+    <div class="page-header fade-in">
+        <h1 class="page-title">Projects that moved the needle</h1>
+        <p class="page-subtitle">A selection of our recent engagements — each representing a real business challenge
+            solved with rigorous analytics and clear delivery.</p>
+    </div>
+
+    <section class="solutions-section fade-in">
+        <div class="industry-tabs">
+            <button class="tab-button active" onclick="showSolutions('energy')">Energy</button>
+            <button class="tab-button" onclick="showSolutions('fintech')">FinTech</button>
+            <button class="tab-button" onclick="showSolutions('automotive')">Automotive</button>
+            <button class="tab-button" onclick="showSolutions('ai')">Spatial Computing</button>
+        </div>
+
+        <!-- Energy & Manufacturing Projects (Consolidated) -->
+        <div id="energy-solutions" class="solutions-content">
+            <div class="solution-card">
+                <div class="solution-number">01</div>
+                <div class="solution-details">
+                    <h3>Smart Grid Data Hub</h3>
+                    <p>Enterprise-grade ETL pipelines consolidating metering logs, ERP systems, and production data into
+                        a scalable warehouse. Enables end-to-end traceability and real-time operational KPI tracking.
+                    </p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Big Data ETL</span>
+                        <span class="tech-badge">Data Warehouse</span>
+                        <span class="tech-badge">Operational Intelligence</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">02</div>
+                <div class="solution-details">
+                    <h3>Industrial IoT Execution System (MES)</h3>
+                    <p>Real-time shop-floor monitoring architecture. Ingests high-frequency sensor data to visualize
+                        production flows, detect bottlenecks, and optimize manufacturing throughput.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">IIoT</span>
+                        <span class="tech-badge">Process Analytics</span>
+                        <span class="tech-badge">Real-time Telemetry</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">03</div>
+                <div class="solution-details">
+                    <h3>AI-Driven Supply Chain Optimization</h3>
+                    <p>Predictive analytics engine for inventory management and demand sensing. Leverages machine
+                        learning to reduce stockouts and optimize warehouse distribution logistics.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Predictive Modeling</span>
+                        <span class="tech-badge">Smart Inventory</span>
+                        <span class="tech-badge">Logistics AI</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">04</div>
+                <div class="solution-details">
+                    <h3>Automated Defect Recognition (ADR)</h3>
+                    <p>High-speed computer vision pipelines for quality assurance. Deploys OCR and object detection
+                        models to identify labeling errors and packaging defects in real-time.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Computer Vision</span>
+                        <span class="tech-badge">Automated QA</span>
+                        <span class="tech-badge">Deep Learning</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">05</div>
+                <div class="solution-details">
+                    <h3>Asset Tracking & Recognition</h3>
+                    <p>Vision-based monitoring system for industrial equipment and components. Automates asset tracking
+                        on the shop floor to ensure compliance and workflow continuity.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Object Detection</span>
+                        <span class="tech-badge">Asset Mgmt</span>
+                        <span class="tech-badge">Industrial Vision</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">06</div>
+                <div class="solution-details">
+                    <h3>Energy Data Integration Platform (VEDA)</h3>
+                    <p>Centralized data unification layer for regional energy systems. Breaks down silos between
+                        generation, transmission, and consumption data for holistic performance reporting.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Data Integration</span>
+                        <span class="tech-badge">Grid Analytics</span>
+                        <span class="tech-badge">Unified Reporting</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">07</div>
+                <div class="solution-details">
+                    <h3>Advanced Metering Infrastructure (AMI) Analytics</h3>
+                    <p>Big data analytics for smart meter ecosystems. Unlocks insights into consumption patterns, load
+                        forecasting, and revenue protection mechanisms.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">AMI</span>
+                        <span class="tech-badge">Load Forecasting</span>
+                        <span class="tech-badge">Revenue Protection</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FinTech Projects -->
+        <div id="fintech-solutions" class="solutions-content" style="display: none;">
+            <div class="solution-card">
+                <div class="solution-number">01</div>
+                <div class="solution-details">
+                    <h3>Multi-Broker Trading Platform</h3>
+                    <p>Unified trading interface integrating multiple brokerage APIs with real-time market data
+                        ingestion. Provides centralized portfolio tracking, order execution, and analytics across
+                        brokers.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">API Integration</span>
+                        <span class="tech-badge">Real-time Data</span>
+                        <span class="tech-badge">Trading Infrastructure</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">02</div>
+                <div class="solution-details">
+                    <h3>Investment Education & Analytics Platform</h3>
+                    <p>AI-powered financial analytics platform with stock screeners, watchlists, and learning modules.
+                        Enables market analysis and decision-making using structured financial datasets and ML insights.
+                    </p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Machine Learning</span>
+                        <span class="tech-badge">Financial Analytics</span>
+                        <span class="tech-badge">Market Analysis</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">03</div>
+                <div class="solution-details">
+                    <h3>Banking Operations Hub</h3>
+                    <p>Comprehensive suite for employee mapping, service desk management, and HR analytics. Optimizes
+                        operational efficiency and benchmarking.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">HR Analytics</span>
+                        <span class="tech-badge">Ops Optimization</span>
+                        <span class="tech-badge">AI Quality Checks</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">04</div>
+                <div class="solution-details">
+                    <h3>Loan Lifecycle Management</h3>
+                    <p>End-to-end solution covering Loan Origination (LOS) and Loan Management (LMS). Streamlines
+                        portfolio management and tracking.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Loan Origination</span>
+                        <span class="tech-badge">Portfolio Mgmt</span>
+                        <span class="tech-badge">LMS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">05</div>
+                <div class="solution-details">
+                    <h3>Risk & Audit Vigilance</h3>
+                    <p>Advanced monitoring platform for functional and operational audits. Includes branch scorecards
+                        and vigilance analytics.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Risk Mgmt</span>
+                        <span class="tech-badge">Audit Architecture</span>
+                        <span class="tech-badge">Fraud Detection</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">06</div>
+                <div class="solution-details">
+                    <h3>Financial Reporting Core</h3>
+                    <p>Centralized data lake integration for demand, incentives, and income management. Unified
+                        reporting for strategic decisions.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Data Lake</span>
+                        <span class="tech-badge">Reporting</span>
+                        <span class="tech-badge">Financial BI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Automotive Projects -->
+        <div id="automotive-solutions" class="solutions-content" style="display: none;">
+            <div class="solution-card">
+                <div class="solution-number">01</div>
+                <div class="solution-details">
+                    <h3>Warranty KPI Development Project</h3>
+                    <p>Developed backend data models and KPI datasets for warranty, service, and dealer performance
+                        analytics. Optimized SQL transformations and reporting layers supporting operational dashboards.
+                    </p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Data Modeling</span>
+                        <span class="tech-badge">SQL Optimization</span>
+                        <span class="tech-badge">KPI Analytics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">02</div>
+                <div class="solution-details">
+                    <h3>Automotive Service Recommendation Dashboard</h3>
+                    <p>Developed dashboard allowing users to query vehicle service requirements using prompts.
+                        Integrated analytics datasets with recommendation logic for service insights.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">NLP</span>
+                        <span class="tech-badge">Recommendation Engine</span>
+                        <span class="tech-badge">Analytics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">03</div>
+                <div class="solution-details">
+                    <h3>Service Contract Package Pricing</h3>
+                    <p>Designed pricing analytics models for vehicle service contract packages. Enabled data-driven
+                        pricing decisions using historical service and cost datasets.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Pricing Analytics</span>
+                        <span class="tech-badge">Data Modeling</span>
+                        <span class="tech-badge">Business Intelligence</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">04</div>
+                <div class="solution-details">
+                    <h3>After-Sales Analytics Suite</h3>
+                    <p>Holistic platform for warranty control, claim surveillance, and damage selection. Includes
+                        predictive pricing and repeat repair recognition.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Warranty Control</span>
+                        <span class="tech-badge">Claim Surveillance</span>
+                        <span class="tech-badge">Predictive Pricing</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">05</div>
+                <div class="solution-details">
+                    <h3>Connected Vehicle Intelligence</h3>
+                    <p>Real-time insights for fault prediction, dealer activation, and vehicle network analysis.
+                        Optimizes service reminders and fuel monitoring.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Fault Prediction</span>
+                        <span class="tech-badge">IoT Analytics</span>
+                        <span class="tech-badge">Network Analysis</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">06</div>
+                <div class="solution-details">
+                    <h3>Automotive Customer 360</h3>
+                    <p>Integrated system for customer acquisition, retention, and campaign management. Unifies payment
+                        data and call center insights.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Customer Acquisition</span>
+                        <span class="tech-badge">Retention</span>
+                        <span class="tech-badge">Campaign Mgmt</span>
+                    </div>
+                </div>
+            </div>
+            <div class="solution-card">
+                <div class="solution-number">07</div>
+                <div class="solution-details">
+                    <h3>Remanufactured Parts Pricing</h3>
+                    <p>Analytics for core operation management and parts feasibility. Forecasts returns and demand for
+                        optimal pricing strategies.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Demand Forecasting</span>
+                        <span class="tech-badge">Pricing Strategy</span>
+                        <span class="tech-badge">Inventory Optimization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spatial Computing Projects -->
+        <div id="ai-solutions" class="solutions-content" style="display: none;">
+            <div class="solution-card">
+                <div class="solution-number">01</div>
+                <div class="solution-details">
+                    <h3>Industrial Spatial Assistant</h3>
+                    <p>Enterprise multi-agent system for AR smart glasses. Integrates computer vision with intelligent
+                        web agents to provide real-time, context-aware guidance for field technicians.</p>
+                    <div class="solution-tech">
+                        <span class="tech-badge">Multi-Agent AI</span>
+                        <span class="tech-badge">Smart Glasses</span>
+                        <span class="tech-badge">Assisted Reality</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/logo.svg" alt="Passageway" class="logo-image" style="height: 50px;">
+                    </a>
+                    <p class="footer-desc">Your partner for innovation and growth in the age of artificial intelligence.
+                        We specialize in transforming complex data challenges into competitive advantages.</p>
+                    <div class="contact-info">
+                        <p>✉ info@pssgway.com</p>
+                        <p>📞 +91-7742543582</p>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>SERVICES</h4>
+                    <a href="services.html">Machine Learning</a>
+                    <a href="services.html">Multi-Agent AI</a>
+                    <a href="services.html">Data Engineering</a>
+                    <a href="services.html">Business Intelligence</a>
+                    <a href="services.html">Enterprise Apps</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>INDUSTRIES</h4>
+                    <a href="solutions.html">Food Technology</a>
+                    <a href="solutions.html">Sports & Entertainment</a>
+                    <a href="solutions.html">Energy & IoT</a>
+                    <a href="solutions.html">Manufacturing</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>COMPANY</h4>
+                    <a href="values.html">About Us</a>
+                    <a href="values.html">Our Values</a>
+                    <a href="partners.html">Partners</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                © 2025 Passageway Tech Private Limited. All rights reserved. <br>
+                Building the future of AI-powered business solutions
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <!-- Chat Widget -->
+    <div id="chat-button" title="Chat with Passageway AI">
+        <span class="chat-badge">1</span>
+        <img src="assets/ai-logo.svg" alt="Passageway AI" style="width: 32px; height: 32px;">
+    </div>
+
+    <!-- Chat Window -->
+    <div id="chat-window">
+        <div class="chat-header">
+            <h3>Passageway AI</h3>
+            <button id="chat-close" aria-label="Close chat">×</button>
+        </div>
+        <div id="chat-messages">
+            <!-- Messages added via JS -->
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Type your message..." aria-label="Message">
+            <button id="chat-send">Send</button>
+        </div>
+    </div>
+
+    <script src="utils/script.js"></script>
+    <script src="utils/chat.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+/* Improved Tab Buttons */
+.industry-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    background: rgba(244, 244, 244, 0.5);
+    border-radius: 12px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab-button {
+    background: transparent;
+    border: 1px solid transparent;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.tab-button:hover {
+    background: rgba(139, 69, 19, 0.05); /* Light accent color hint */
+    color: var(--accent);
+}
+
+.tab-button.active {
+    background: var(--bg-white);
+    color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft shadow for depth */
+    border-color: rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+}

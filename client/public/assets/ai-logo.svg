@@ -1,0 +1,7 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Central Sparkle / Compass -->
+  <path d="M32 0C32 14 36 24 48 32C36 40 32 50 32 64C32 50 28 40 16 32C28 24 32 14 32 0Z" fill="white"/>
+  <!-- Small secondary sparkles -->
+  <path d="M54 6L56 12L58 6L56 0L54 6Z" fill="white" opacity="0.8"/>
+  <path d="M10 48L12 54L14 48L12 42L10 48Z" fill="white" opacity="0.6"/>
+</svg>
