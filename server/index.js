@@ -31,10 +31,21 @@ if (!SPREADSHEET_ID) {
 const SERVICE_ACCOUNT_FILE = path.join(__dirname, 'service-account.json');
 
 async function getSheetsService() {
-    const auth = new google.auth.GoogleAuth({
-        keyFile: SERVICE_ACCOUNT_FILE,
-        scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-    });
+    let auth;
+    if (process.env.GOOGLE_CREDENTIALS) {
+        // Production: Load from Environment Variable
+        auth = new google.auth.GoogleAuth({
+            credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
+            scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+        });
+    } else {
+        // Local: Load from File
+        auth = new google.auth.GoogleAuth({
+            keyFile: SERVICE_ACCOUNT_FILE,
+            scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+        });
+    }
+
     const client = await auth.getClient();
     const sheets = google.sheets({ version: 'v4', auth: client });
     return sheets;
