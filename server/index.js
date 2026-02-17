@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
+// const rateLimit = require('express-rate-limit');
 const { google } = require('googleapis');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -37,15 +37,11 @@ app.use(bodyParser.json());
 // Enable Trust Proxy for Render/Load Balancers
 app.set('trust proxy', 1);
 
-// Rate Limiting
-const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 300, // Increased limit to 300 to avoid false positives
-    message: 'Too many requests from this IP, please try again later.',
-    standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-    legacyHeaders: false, // Disable the `X-RateLimit-*` headers
-});
-// app.use(limiter); // Temporarily disabled for debugging deployment
+// Rate Limiting REMOVED for production stability
+// const limiter = rateLimit({ ... });
+// app.use(limiter);
+
+console.log("DEPLOYMENT UPDATE: RATE LIMITER COMPLETELY REMOVED");
 
 // Google Sheets Config
 const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
