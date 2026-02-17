@@ -45,7 +45,7 @@ const limiter = rateLimit({
     standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 });
-app.use(limiter);
+// app.use(limiter); // Temporarily disabled for debugging deployment
 
 // Google Sheets Config
 const SPREADSHEET_ID = process.env.SPREADSHEET_ID;
