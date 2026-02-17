@@ -273,9 +273,20 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Fallback
+        // Fallback / Done State
         if (flowState === 'done') {
-            botReply("I'm listening. Feel free to ask about our other services.");
+            const lowerText = userText.toLowerCase();
+            if (lowerText.includes('thank') || lowerText.includes('thx')) {
+                botReply("You're very welcome! Have a great day.");
+                return;
+            }
+            if (lowerText.includes('bye') || lowerText.includes('goodbye') || lowerText.includes('see ya')) {
+                botReply("Goodbye! We'll be in touch soon.");
+                return;
+            }
+            // If they type something else, maybe re-open discovery?
+            // For now, keep it friendly.
+            botReply("I've received your details, but I'm still here if you have quick questions about our services!");
         }
     }
 
@@ -378,5 +389,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sendButton) sendButton.addEventListener('click', handleInput);
     if (chatInput) chatInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') handleInput();
+    });
+
+    // Handle External Triggers (from Solutions page etc)
+    document.addEventListener('triggerChatContext', (e) => {
+        const topic = e.detail;
+        specificInterest = topic; // Pre-fill interest
+        botReply(`I see you're interested in **${topic}**.\n\nHow can we help you with that?`);
+        flowState = 'value';
     });
 });

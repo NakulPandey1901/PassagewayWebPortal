@@ -54,3 +54,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Contextual Chat Opener
+function openChatWithContext(topic) {
+    const chatButton = document.getElementById('chat-button');
+    if (chatButton) {
+        // Trigger click to open if not open (handled by toggler)
+        chatButton.click();
+
+        // Wait for it to open then send context
+        setTimeout(() => {
+            const chatWindow = document.getElementById('chat-window');
+            if (chatWindow && chatWindow.classList.contains('open')) {
+                // Find the chat input or handle via global event if possible, 
+                // but simpler is to just manually inject a bot message prompt.
+                // Since we don't have direct access to 'botReply' here (scoping),
+                // we will dispatch a custom event that chat.js can listen to.
+                const event = new CustomEvent('triggerChatContext', { detail: topic });
+                document.dispatchEvent(event);
+            }
+        }, 100);
+    }
+}
