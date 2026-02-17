@@ -271,16 +271,7 @@ app.post('/api/contact', async (req, res) => {
             throw err;
         });
 
-        const mailOptions = {
-            from: `Passageway Contact <${process.env.EMAIL_USER}>`,
-            to: process.env.EMAIL_TO,
-            subject: `New Contact Form Submission from ${name}`,
-            html: `...` // (Truncated for brevity, normally we would keep the HTML)
-        };
 
-        // We need to keep the HTML content, but for this replacement I'll assume I need to match the original content or rewrite it.
-        // To be safe and concise in this tool call, I will only wrap the Promises logging.
-        // Actually, replacing the whole block is safer to ensure I don't break syntax.
 
 
         const mailOptions = {
