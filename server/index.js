@@ -278,6 +278,14 @@ app.post('/api/contact', async (req, res) => {
     }
 });
 
+// Serve Static Assets (Frontend)
+app.use(express.static(path.join(__dirname, '../public')));
+
+// Catch-all route to serve basic index.html for any unmatched routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
