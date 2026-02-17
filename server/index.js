@@ -6,6 +6,25 @@ const rateLimit = require('express-rate-limit');
 const { google } = require('googleapis');
 const bodyParser = require('body-parser');
 const path = require('path');
+const fs = require('fs');
+
+// DEBUG: Verify Directory Structure on Render
+console.log('----------------------------------------');
+console.log('DEBUG: Server Starting...');
+console.log('DEBUG: __dirname:', __dirname);
+const publicPath = path.join(__dirname, '../public');
+console.log('DEBUG: publicPath resolved to:', publicPath);
+
+if (fs.existsSync(publicPath)) {
+    console.log('DEBUG: public directory exists.');
+    console.log('DEBUG: Contents of public:', fs.readdirSync(publicPath));
+} else {
+    console.error('DEBUG: CRITICAL - public directory NOT found at:', publicPath);
+    // Try to list the parent dir to see what's there
+    const parentDir = path.join(__dirname, '../');
+    console.log(`DEBUG: Contents of parent dir (${parentDir}):`, fs.readdirSync(parentDir));
+}
+console.log('----------------------------------------');
 
 const app = express();
 const PORT = process.env.PORT || 5001;
