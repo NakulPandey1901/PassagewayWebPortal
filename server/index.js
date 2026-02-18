@@ -240,6 +240,15 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+// Verify connection configuration
+transporter.verify(function (error, success) {
+    if (error) {
+        console.error('DEBUG: SMTP Connection Error:', error);
+    } else {
+        console.log('DEBUG: SMTP Server is ready to take our messages');
+    }
+});
+
 // 2. Contact Form Data (Unified "Leads" Tab)
 app.post('/api/contact', async (req, res) => {
     try {
