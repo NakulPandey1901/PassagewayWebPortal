@@ -234,13 +234,13 @@ const nodemailer = require('nodemailer');
 // Email Transporter
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // use SSL
+    port: 587, // Try standard submission port
+    secure: false, // upgrade later with STARTTLS
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
     },
-    connectionTimeout: 10000 // Fail fast (10s) if blocked
+    connectionTimeout: 10000
 });
 
 // Verify connection configuration
