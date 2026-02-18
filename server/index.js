@@ -209,11 +209,12 @@ app.post('/api/chat', async (req, res) => {
             `
         };
 
-        // Fire-and-Forget Email (Don't wait for it)
+        // Fire-and-Forget Email
         transporter.sendMail(mailOptions).then(info => {
             console.log('Background Email Sent:', info.response);
         }).catch(err => {
-            console.error('Background Email Failed:', err);
+            console.warn('Background Email Skipped (Likely Blocked by Render):', err.code || err.message);
+            // Non-critical: Data is already in Sheets
         });
 
         // Only wait for Sheets (Critical Data)
@@ -240,17 +241,11 @@ const transporter = nodemailer.createTransport({
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
     },
-    connectionTimeout: 10000
+    connectionTimeout: 5000 // Quick fail if blocked
 });
 
-// Verify connection configuration
-transporter.verify(function (error, success) {
-    if (error) {
-        console.error('DEBUG: SMTP Connection Error:', error);
-    } else {
-        console.log('DEBUG: SMTP Server is ready to take our messages');
-    }
-});
+// Note: Render Free Tier often blocks outgoing SMTP ports (25, 465, 587).
+// If email fails, we rely on Google Sheets as the primary data store.
 
 // 2. Contact Form Data (Unified "Leads" Tab)
 app.post('/api/contact', async (req, res) => {
@@ -289,9 +284,6 @@ app.post('/api/contact', async (req, res) => {
             throw err;
         });
 
-
-
-
         const mailOptions = {
             from: `Passageway Contact <${process.env.EMAIL_USER}>`,
             to: process.env.EMAIL_TO,
@@ -326,13 +318,14 @@ app.post('/api/contact', async (req, res) => {
             `
         };
 
-        // Fire-and-Forget Email (Don't wait for it)
+        // Fire-and-Forget Email
         transporter.sendMail(mailOptions).then(info => {
             console.log('Background Email Sent:', info.response);
             require('fs').appendFileSync('server.log', `[${new Date().toISOString()}] Success: Email sent\n`);
         }).catch(err => {
-            console.error('Background Email Failed:', err);
-            require('fs').appendFileSync('server.log', `[${new Date().toISOString()}] Email Error: ${err}\n`);
+            console.warn('Background Email Skipped (Likely Blocked by Render):', err.code || err.message);
+            require('fs').appendFileSync('server.log', `[${new Date().toISOString()}] Email Blocked/Failed: ${err.message}\n`);
+            // Non-critical error
         });
 
         // Only wait for Sheets (Critical Data)
